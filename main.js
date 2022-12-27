@@ -77,24 +77,19 @@ noFill();
 stroke("#FF0000");
 rect(objects[i].x,objects[i].y,objects[i].width,objects[i].height);
 
-
-if(objects[i].label==obj_name)
-{
-
-    video.stop()
-    object_detector.detect(gotResult);
-    document.getElementById("object_name").inerHTML="The object"+obj_name+"Has been found";
-
-
+    if(objects[i].label == obj_name){
+        video.stop();
+        object_Detector.detect(gotResults);
+        document.getElementById("object_status").innerHTML = obj_name+" Found";
+        var synth = window.speechSynthesis;
+        var utterThis = new SpeechSynthesisUtterance(obj_name + "Found");
+        synth.speak(utterThis);
+    }
+    else{
+        document.getElementById("object_status").innerHTML = obj_name + " Not Found";
+    }
 }
-
-
-
-
 }
-
-}
-
 }
 
 

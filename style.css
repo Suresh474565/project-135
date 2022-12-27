@@ -28,3 +28,21 @@ background-color: coral;
 
 
 }
+
+body
+{
+
+background-size:contain;
+
+}
+
+canvas
+{
+
+border-color: aqua;
+border-radius: 20px;
+border-style: double;
+margin-top: 250px;
+
+
+}
